@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
+    <style>
+    #workerBusy{
+        display: none;
+    }
+    </style>
     <script>
         window.addEventListener("DOMContentLoaded", init);
         var worker = null;
@@ -12,14 +17,20 @@
             worker.addEventListener("message", onWorkerMessage);
         }
         function onWorkerMessage(evtArg){
-            if (evtArg.data === "done"){
+            var data = evtArg.data;
+            if (data.type === "done"){
                 displayMessage("Work completed");
+                document.getElementById("workerBusy").style.display = "none";
+            } else if (data.type === "progress"){
+                document.getElementById("workerProgress").value = data.percentCompleted;
+                document.getElementById("percentCompleted").innerHTML = data.percentCompleted + '%';
             } else {
                 console.log("unknown message from worker", evtArg);
             }
         }
         function onBtnDoWorkClick(){
             worker.postMessage("start");
+            document.getElementById("workerBusy").style.display = "block";
             displayMessage("Work started");
         }
         function displayMessage(msg){
@@ -32,5 +43,12 @@
     <input type="text" name="" id="">
     <input type="button" value="Do Work" id="btnDoWork">
     <div id="divMessages"></div>
+    <div id="workerBusy">
+        <img src="busy.gif" alt="">
+    </div>
+    <div>
+        <progress id="workerProgress" min="0" max="100" value="0"></progress>
+        <span id="percentCompleted"></span>
+    </div>
 </body>
 </html>
