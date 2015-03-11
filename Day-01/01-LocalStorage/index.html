@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bug Tracker</title>
+    <style>
+    .closed {
+        color : red;
+        font-style: italic;
+        text-decoration: line-through;
+        font-weight: bold;
+    }
+        li{
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        window.addEventListener("DOMContentLoaded",init);
+        function init(){
+            document.getElementById("btnAdd").addEventListener("click", onBtnAddClick);
+            document.getElementById("btnRemoveClosed").addEventListener("click", onBtnRemoveClosedClick);
+        }
+        function onBtnAddClick(){
+            var bugTitle = document.getElementById("txtTitle").value;
+            var newBug = document.createElement("li");
+            newBug.innerHTML = bugTitle;
+            newBug.addEventListener("click", onBugItemClick);
+            document.getElementById("olBugList").appendChild(newBug);
+        }
+        function onBugItemClick(){
+            this.classList.toggle('closed');
+        }
+        function onBtnRemoveClosedClick(){
+            var bugsList = document.getElementById("olBugList").children;
+            for(var i=bugsList.length-1; i>=0; i--){
+                if (bugsList[i].classList.contains("closed"))
+                    bugsList[i].remove();
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Bug Tracker</h1>
+    <hr>
+    <div class="content">
+        <label for="">Bug :</label>
+        <input type="text" name="" id="txtTitle">
+        <input type="button" value="Add Bug" id="btnAdd">
+        <input type="button" value="Remove Closed" id="btnRemoveClosed">
+        <ol id="olBugList">
+           
+        </ol>
+    </div>
+</body>
+</html>

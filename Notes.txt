@@ -1,0 +1,33 @@
+Data Storage
+============
+    1. Local Storage
+    2. Session Storage
+    3. Indexed Db
+    4. Web SQL (Obsolete)
+    
+Multi threading
+===============
+    5. Web Workers
+    
+Real time Server Updates
+=========================
+    6. Web Sockets
+    7. Server Sent Events
+    
+Offline
+========
+    8. Offline Application Cache
+    
+9. New Structural Elements
+
+Mobile 
+======
+    10. New Input Types
+    11. Geo Locations API
+    12. Video
+    13. Audio
+    
+14. Canvas
+15. SVG
+
+CSS3.0
