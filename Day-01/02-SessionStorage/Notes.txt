@@ -1,0 +1,14 @@
+Local Storage
+
+window.localStorage (object)
+    - key/value pairs
+    - both key and value should be strings
+    - 10 MB  (per origin) limit by default
+    - Follows "same origin" policy
+    - API
+        - setItem(key,value)
+        - getItem(key) => value
+        - removeItem(key)
+        - key(index) => key
+        - clear()
+        - length 

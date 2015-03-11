@@ -16,7 +16,7 @@
     </style>
     <script>
         function getBugStorage(){
-            var storage = window.localStorage;
+            var storage = window.sessionStorage;
             
             function loadBugsFromStorage(){
                 var result = [];
@@ -61,7 +61,6 @@
             
         }
         
-        window.addEventListener('storage', loadBugsFromStorage);
         window.addEventListener("DOMContentLoaded",init);
         var bugStorage = getBugStorage();
         
