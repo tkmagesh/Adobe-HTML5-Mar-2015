@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS 3.0</title>
+    <!--
+    No images & scripts for presentation
+    1. gradient
+    2. rounded corner
+    3. shadows
+    4. fancy fonts
+    5. transformations
+
+    6. animations
+    -->
+    <style>
+    #content{
+        height : 300px;
+        width : 300px;
+        margin: 100px;
+        border: 2px solid black;
+        line-height: 300px;
+        text-align: center;
+        font-size: 32pt;
+
+        border-radius: 20px;
+        background: -webkit-linear-gradient(top, orange 0%, orange 33%, white 33%, white 66%, green 66%, green 100%);
+        background: -moz-linear-gradient(top, orange 0%, orange 33%, white 33%, white 66%, green 66%, green 100%);
+        background: -o-linear-gradient(top, orange 0%, orange 33%, white 33%, white 66%, green 66%, green 100%);
+        background: -ms-linear-gradient(top, orange 0%, orange 33%, white 33%, white 66%, green 66%, green 100%);
+        background: linear-gradient(top, orange 0%, orange 33%, white 33%, white 66%, green 66%, green 100%);
+
+        box-shadow: 0px 0px 0px 5px gray, 0px 0px 0px 10px yellow, 0px 0px 0px 15px blue;
+        text-shadow: 3px 3px 3px gray;
+
+        -webkit-transition :  -webkit-transform 0.5s ease-out;
+
+    }
+    #content:hover{
+        -webkit-transform : rotate(45deg) scale(0.5,0.5);
+    }
+    </style>
+</head>
+<body>
+    <div id="content">
+        ADOBE
+    </div>
+</body>
+</html>

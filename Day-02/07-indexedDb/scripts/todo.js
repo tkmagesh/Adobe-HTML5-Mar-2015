@@ -288,7 +288,7 @@ window.onload = function() {
           // 09 -> 9. This is needed because JS date number values never have leading zeros, but our data might.
           // The secondsCheck = 0 check is so that you don't get duplicate notifications for the same task. The notification
           // will only appear when the seconds is 0, meaning that you won't get more than one notification for each task
-          if(+(cursor.value.hours) == hourCheck && +(cursor.value.minutes) == minuteCheck && +(cursor.value.day) == dayCheck && monthNumber == monthCheck && cursor.value.year == yearCheck && cursor.value.notified == "no") {
+          if(+(cursor.value.day) == dayCheck && monthNumber == monthCheck && cursor.value.year == yearCheck && cursor.value.notified == "no") {
 
             // If the numbers all do match, run the createNotification() function to create a system notification
             createNotification(cursor.value.taskTitle);
