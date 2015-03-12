@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Notification</title>
+    <style>
+    #content{
+        width : 300px;
+        height: 300px;
+        background-color: pink;
+    }
+    </style>
+</head>
+<body>
+    <input type="button" value="Show Notification" id="btnShow">
+    <div id="content">
+
+    </div>
+    <input type="button" value="Show Full Screen" id="btnShowFullScreen">
+    <script>
+    document.getElementById("btnShow").addEventListener("click", function(){
+        Notification.requestPermission(function(){
+            console.log(arguments);
+            var n = new Notification("this is a notification");
+        });
+    });
+        document.getElementById("btnShowFullScreen").addEventListener("click", function(){
+       document.getElementById("content").webkitRequestFullScreen();                                                               });
+    </script>
+</body>
+</html>
