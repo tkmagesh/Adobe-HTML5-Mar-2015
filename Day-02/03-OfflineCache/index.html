@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" manifest="app.manifest">
+<head>
+    <meta charset="UTF-8">
+    <title>Bug Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-online.css">
+
+    <script src="bugStorage.js"></script>
+    <script src="bugTracker.js"></script>
+    <script>
+    window.applicationCache.addEventListener("updateready", onCacheUpdateReady);
+        function onCacheUpdateReady(){
+            var response = confirm("A new version of the application is available. Do you want to use it?");
+            if (response){
+                window.location.reload();
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Bug Tracker - V2.0</h1>
+    <hr>
+    <div class="content">
+        <label for="">Bug :</label>
+        <input type="text" name="" id="txtTitle">
+        <input type="button" value="Add Bug" id="btnAdd">
+        <input type="button" value="Remove Closed" id="btnRemoveClosed">
+        <ol id="olBugList">
+
+        </ol>
+    </div>
+</body>
+</html>
